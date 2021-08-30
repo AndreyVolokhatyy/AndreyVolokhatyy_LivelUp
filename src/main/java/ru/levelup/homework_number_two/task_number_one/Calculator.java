@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Calculator {
-    public double a,b, math;
+    public double a,b;
+    int math;
 
     public void calculate() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
