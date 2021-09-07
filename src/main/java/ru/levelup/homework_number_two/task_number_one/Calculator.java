@@ -35,7 +35,7 @@ public class Calculator {
             System.out.println("Результат: "+ (a*b));
         } else if (math == 4){
             System.out.println("Результат: "+ (a/b));
-        } else if (math < 1 || math > 4){
+        } else {
             System.out.println("Данного арифметического действия нет в списке");
         }
     }

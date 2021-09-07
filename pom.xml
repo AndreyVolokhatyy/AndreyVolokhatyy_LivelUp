@@ -9,8 +9,133 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <testng.version>7.4.0</testng.version>
+        <junit-jupiter.version>5.7.2</junit-jupiter.version>
+        <checkstyle.version>8.42</checkstyle.version>
+
+        <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>calculator-fully-all-tests-suite</id>
+
+            <properties>
+                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorFullyAllTestsSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>calculator-all-tests-suite</id>
+
+            <properties>
+                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorAllTestsSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>calculator-splitted-tests-suite</id>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorSplittedTestsSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>
+                        <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
+                        https://raw.githubusercontent.com/khda91/leveup-code-checkers-configurations/main/checkstyle/checkstyle.xml
+                    </configLocation>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite.xml.file}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
