@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import ru.levelup.homework_number_three.task_number_one.airport.Airport;
 import ru.levelup.homework_number_two.task_number_one.Calculator;
 
@@ -15,5 +16,6 @@ public class Main {
     airport.sortDistance();
     airport.search();
     airport.readyFly();
+
   }
 }
