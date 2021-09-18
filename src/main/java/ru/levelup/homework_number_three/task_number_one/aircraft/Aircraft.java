@@ -1,5 +1,9 @@
 package ru.levelup.homework_number_three.task_number_one.aircraft;
 
+import ru.levelup.homework_number_four.task_number_one.NegativeValueException;
+import ru.levelup.homework_number_four.task_number_one.NullNameException;
+import ru.levelup.homework_number_four.task_number_one.SizeValueException;
+
 public class Aircraft {
 
   private String name;
@@ -22,15 +26,25 @@ public class Aircraft {
   }
 
   public void setName(String name) {
-    this.name = name;
+    if (name == "" || name == null){
+      throw new NullNameException();
+    } else {
+      this.name = name;
+    }
   }
 
   public Integer getDistance() {
-    return distance;
+      return distance;
   }
 
   public void setDistance(Integer distance) {
-    this.distance = distance;
+    if (distance < 0){
+      throw new NegativeValueException();
+    } else if (distance > 20000 || distance < 100){
+      throw new SizeValueException();
+    } else {
+      this.distance = distance;
+    }
   }
 
   public Integer getTonnage() {
@@ -38,7 +52,13 @@ public class Aircraft {
   }
 
   public void setTonnage(Integer tonnage) {
-    this.tonnage = tonnage;
+    if (tonnage < 0){
+      throw new NegativeValueException();
+    } else if (tonnage > 200 || tonnage < 1){
+      throw new SizeValueException();
+    } else {
+      this.tonnage = tonnage;
+    }
   }
 
   public Integer getCapacity() {
@@ -46,7 +66,13 @@ public class Aircraft {
   }
 
   public void setCapacity(Integer capacity) {
-    this.capacity = capacity;
+    if (capacity < 0){
+      throw new NegativeValueException();
+    } else if (capacity > 400){
+      throw new SizeValueException();
+    } else {
+      this.capacity = capacity;
+    }
   }
 
   @Override
