@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Calculator Multi and Divide Test Suite">
-  <test name="CalculatorAllTest">
+<suite name="Calculator Others Test Suite">
+  <test name="CalculatorOthersTest">
     <classes>
       <class name="ru.levelup.homework_number_five.task_number_one.CalculatorPowTest"/>
       <class name="ru.levelup.homework_number_five.task_number_one.CalculatorSqrtTest"/>

@@ -1,12 +1,13 @@
 package ru.levelup.homework_number_three.task_number_one.airport;
 
-import ru.levelup.homework_number_three.task_number_one.aircraft.Airplane;
-import ru.levelup.homework_number_three.task_number_one.aircraft.Helicopter;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import ru.levelup.homework_number_three.task_number_one.aircraft.Airplane;
+import ru.levelup.homework_number_three.task_number_one.aircraft.Helicopter;
 
 public class Airport {
 
