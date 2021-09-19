@@ -1,4 +1,4 @@
-package ru.levelup.homework_number_three.task_number_one;
+package ru.levelup.homework_number_five.task_number_one;
 
 import jdk.jfr.Description;
 import org.testng.Assert;
@@ -18,7 +18,7 @@ public class CalculatorDivideTest extends AbstractBaseCalculator{
       expectedExceptionsMessageRegExp = "Attempt to divide by zero")
   @Description("Тест деления на 0")
   public void divideZeroTest(){
-    calculator.div(30,0);
+   calculator.div(30,0);
   }
 
 }

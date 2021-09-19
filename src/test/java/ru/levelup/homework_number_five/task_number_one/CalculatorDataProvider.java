@@ -1,4 +1,4 @@
-package ru.levelup.homework_number_three.task_number_one;
+package ru.levelup.homework_number_five.task_number_one;
 
 import org.testng.annotations.DataProvider;
 

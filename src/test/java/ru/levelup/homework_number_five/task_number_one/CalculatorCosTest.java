@@ -1,4 +1,4 @@
-package ru.levelup.homework_number_three.task_number_one;
+package ru.levelup.homework_number_five.task_number_one;
 
 import jdk.jfr.Description;
 import org.testng.Assert;
@@ -8,7 +8,7 @@ public class CalculatorCosTest extends AbstractBaseCalculator{
 
   @Test
   @Description("Тест на косинус")
-  //Ошибка калькулятора
+  //Ошибка в калькуляторе
   public void cosTest(){
     double actual = calculator.cos(20);
     double expected = Math.cos(20);

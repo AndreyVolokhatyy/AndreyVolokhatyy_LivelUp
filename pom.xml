@@ -24,30 +24,54 @@
 
     <profiles>
         <profile>
-            <id>calculator-fully-all-tests-suite</id>
-
-            <properties>
-                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorFullyAllTestsSuite.xml</suite.xml.file>
-            </properties>
-        </profile>
-
-        <profile>
             <id>calculator-all-tests-suite</id>
 
             <properties>
-                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorAllTestsSuite.xml</suite.xml.file>
+                <suite.xml.file>${project.basedir}src/test/resources/ru/levelup/homework_number_five/task_number_one/CalculatorAllTestSuite.xml</suite.xml.file>
             </properties>
         </profile>
 
         <profile>
-            <id>calculator-splitted-tests-suite</id>
+            <id>calculator-multi-divide-tests-suite</id>
+
+            <properties>
+                <suite.xml.file>${project.basedir}src/test/resources/ru/levelup/homework_number_five/task_number_one/CalculatorMultiDivideTestSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>calculator-sum-sub-tests-suite</id>
 
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
 
             <properties>
-                <suite.xml.file>${project.basedir}/src/test/resources/unit/tools/unit/CalculatorSplittedTestsSuite.xml</suite.xml.file>
+                <suite.xml.file>${project.basedir}src/test/resources/ru/levelup/homework_number_five/task_number_one/CalculatorSumSubTestSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>calculator-trigonometric-tests-suite</id>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <suite.xml.file>${project.basedir}src/test/resources/ru/levelup/homework_number_five/task_number_one/CalculatorTrigonometricTestSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>calculator-others-tests-suite</id>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <suite.xml.file>${project.basedir}src/test/resources/ru/levelup/homework_number_five/task_number_one/CalculatorOthersSuite.xml</suite.xml.file>
             </properties>
         </profile>
     </profiles>

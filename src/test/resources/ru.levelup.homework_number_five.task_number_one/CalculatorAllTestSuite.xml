@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Calculator All Test Suite">
+  <test name="CalculatorAllTest">
+    <packages>
+      <package name="ru.levelup.homework_number_five.task_number_one"/>
+    </packages>
+  </test>
+</suite>
