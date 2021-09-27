@@ -13,9 +13,12 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <webdrivermanager.version>5.0.1</webdrivermanager.version>
         <testng.version>7.4.0</testng.version>
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
         <checkstyle.version>8.42</checkstyle.version>
+        <java.faker>1.0.2</java.faker>
 
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -68,6 +71,13 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>mail-tests-suite</id>
+
+            <properties>
+                <suite.xml.file>${project.basedir}/src/test/resources/homework_number_six/MailTestsSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -84,6 +94,24 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/calculator-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${java.faker}</version>
         </dependency>
     </dependencies>
 

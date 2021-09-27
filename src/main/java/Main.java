@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import ru.levelup.homework_number_four.task_number_one.AirportException;
 import ru.levelup.homework_number_four.task_number_two.GenerateNumber;
@@ -28,5 +29,27 @@ public class Main {
 //    System.out.println(list.size());
 //    gen.uniqueValueTest(list);
 //    gen.decomposition(list);
+
+    List <String> list = new ArrayList<>();
+    list.add("One_1");
+    list.add("Two_1");
+    list.add("Three_1");
+    list.add("Two_1");
+    list.add("Two_1");
+    list.add("Two_1");
+    list.add("One_1");
+    list.add("Four_1");
+    list.add("One_1");
+    int z = 1;
+    for (int i = 0; i < list.size(); i++) {
+      for (int j = i+1; j < list.size(); j++) {
+        if(list.get(i).equals(list.get(j))){
+          z++;
+          String zz = Integer.toString(z);
+          list.set(j,list.get(j).replaceFirst("1",zz));
+        }
+      }
+      System.out.println(list.get(i));
+    }
   }
 }
