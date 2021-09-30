@@ -26,7 +26,7 @@ public class Aircraft {
   }
 
   public void setName(String name) {
-    if (name == "" || name == null){
+    if (name == "" || name == null) {
       throw new NullNameException();
     } else {
       this.name = name;
@@ -34,13 +34,13 @@ public class Aircraft {
   }
 
   public Integer getDistance() {
-      return distance;
+    return distance;
   }
 
   public void setDistance(Integer distance) {
-    if (distance < 0){
+    if (distance < 0) {
       throw new NegativeValueException();
-    } else if (distance > 20000 || distance < 100){
+    } else if (distance > 20000 || distance < 100) {
       throw new SizeValueException();
     } else {
       this.distance = distance;
@@ -52,9 +52,9 @@ public class Aircraft {
   }
 
   public void setTonnage(Integer tonnage) {
-    if (tonnage < 0){
+    if (tonnage < 0) {
       throw new NegativeValueException();
-    } else if (tonnage > 200 || tonnage < 1){
+    } else if (tonnage > 200 || tonnage < 1) {
       throw new SizeValueException();
     } else {
       this.tonnage = tonnage;
@@ -66,9 +66,9 @@ public class Aircraft {
   }
 
   public void setCapacity(Integer capacity) {
-    if (capacity < 0){
+    if (capacity < 0) {
       throw new NegativeValueException();
-    } else if (capacity > 400){
+    } else if (capacity > 400) {
       throw new SizeValueException();
     } else {
       this.capacity = capacity;

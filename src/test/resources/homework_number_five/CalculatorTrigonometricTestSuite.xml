@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Calculator Trigonometric Test Suite">
+  <test name="CalculatorTrigonometricTest">
+    <classes>
+      <class name="ru.levelup.homework_number_five.task_number_one.CalculatorTgTest"/>
+      <class name="ru.levelup.homework_number_five.task_number_one.CalculatorCtgTest"/>
+      <class name="ru.levelup.homework_number_five.task_number_one.CalculatorCosTest"/>
+      <class name="ru.levelup.homework_number_five.task_number_one.CalculatorSinTest"/>
+    </classes>
+  </test>
+</suite>
+
