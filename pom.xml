@@ -19,6 +19,7 @@
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
         <checkstyle.version>8.42</checkstyle.version>
         <java.faker>1.0.2</java.faker>
+        <rest-assured.version>4.4.0</rest-assured.version>
 
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -78,6 +79,14 @@
                 <suite.xml.file>${project.basedir}/src/test/resources/homework_number_six/MailTestsSuite.xml</suite.xml.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>rest-tests-suite</id>
+
+            <properties>
+                <suite.xml.file>${project.basedir}/src/test/resources/homework_number_eight/RestTestsSuite.xml</suite.xml.file>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -113,6 +122,13 @@
             <artifactId>javafaker</artifactId>
             <version>${java.faker}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
